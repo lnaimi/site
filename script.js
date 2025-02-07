@@ -24,6 +24,7 @@ window.addEventListener('scroll', revealCards);
 window.addEventListener('load', revealCards);
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Supprimer l'ancien code du menu hamburger
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     const header = document.querySelector('header');
