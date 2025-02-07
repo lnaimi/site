@@ -24,43 +24,33 @@ window.addEventListener('scroll', revealCards);
 window.addEventListener('load', revealCards);
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Supprimons les anciennes déclarations
     const hamburger = document.getElementById('hamburger');
-    const nav = document.getElementById('nav-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const header = document.querySelector('header');
 
-    if (hamburger && nav) {
-        hamburger.addEventListener('click', function() {
-            // Ajout/suppression de la classe active pour le menu et le bouton
-            nav.classList.toggle('active');
-            this.classList.toggle('active');
-            
-            // Empêcher le défilement du body quand le menu est ouvert
-            document.body.classList.toggle('menu-open');
-        });
-
-        // Fermer le menu quand on clique sur un lien
-        nav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
-        });
-
-        // Fermer le menu quand on clique en dehors
-        document.addEventListener('click', function(e) {
-            if (nav.classList.contains('active') && 
-                !nav.contains(e.target) && 
-                !hamburger.contains(e.target)) {
-                nav.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
-
-        // Empêcher la fermeture lors du clic à l'intérieur du menu
-        nav.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
+    function toggleMenu() {
+        navMenu.classList.toggle('show');
+        hamburger.classList.toggle('active');
     }
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Fermer le menu quand on clique sur un lien
+    const navLinks = document.querySelectorAll('.nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('show');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    // Fermer le menu quand on clique en dehors
+    document.addEventListener('click', (e) => {
+        if (!header.contains(e.target) && navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+            hamburger.classList.remove('active');
+        }
+    });
 
     // Marquer le lien actif
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -72,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Gestion du scroll
     let lastScroll = 0;
-    const header = document.querySelector('header');
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
