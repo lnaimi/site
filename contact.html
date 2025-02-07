@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABLAM CTD - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="ABLAM CTD Logo">
+        </div>
+        <nav id="nav-menu" class="nav">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="equipe.html">Notre Équipe</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="hamburger" class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <h1>Contactez-nous</h1>
+        <p>Notre équipe est à votre écoute</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Informations Légales</h3>
+                        <ul>
+                            <li><strong>Forme juridique :</strong> SARLAU</li>
+                            <li><strong>RC :</strong> 631923</li>
+                            <li><strong>ICE :</strong> 003519970000052</li>
+                            <li><strong>IF :</strong> 66007150</li>
+                            <li><strong>ITP :</strong> 34210651</li>
+                            <li><strong>CNSS :</strong> 5541593</li>
+                        </ul>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>209 Rue Mustapha El Maani étage 4 - N° 5 Anfa, Casablanca Maroc</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p><a href="tel:0661782454">06 61782454</a></p>
+                                <p><a href="tel:0676435839">06 76435839</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:ablamctd2024@gmail.com">ablamctd2024@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <h4>Horaires d'ouverture</h4>
+                                <p>Lundi - Vendredi : 9h00 - 18h00</p>
+                                <p>Samedi : 9h00 - 13h00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contactForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Téléphone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Choisissez un sujet</option>
+                                <option value="formation">Formation</option>
+                                <option value="conseil">Conseil</option>
+                                <option value="accompagnement">Accompagnement</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <h3>Notre Localisation</h3>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.846399132721!2d-7.6193!3d33.5893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM1JzIxLjUiTiA3wrAzNycwOS41Ilc!5e0!3m2!1sfr!2sma!4v1234567890"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>Contactez-nous pour plus d'informations.</p>
+        <p>Email : <a href="mailto:ablamctd2024@gmail.com">ablamctd2024@gmail.com</a></p>
+        <p>Téléphone : 06 61782454 - 06 76435839</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
