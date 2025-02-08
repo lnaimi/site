@@ -657,6 +657,55 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    transform: perspective(800px) rotateY(0deg);
+    transition: all 0.5s ease;
+    border: none;
+    outline: 4px solid var(--primary-color);
+    outline-offset: 3px;
+    box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+.member-image:hover {
+    transform: perspective(800px) rotateY(5deg) translateY(-5px);
+    box-shadow: -5px 8px 15px -2px rgba(0, 0, 0, 0.3);
+    outline-color: var(--accent-color);
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transform: scale(0.95);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+}
+
+.member-image:hover img {
+    transform: scale(1);
+}
+
+/* Effet de brillance au survol */
+.member-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: skewX(-25deg);
+    transition: 0.75s;
+}
+
+.member-image:hover::after {
+    left: 150%;
 }
 
 /* Style pour l'icône dans le cercle */
