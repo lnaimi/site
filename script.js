@@ -61,19 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Gestion du scroll
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll > lastScroll && currentScroll > 100) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        lastScroll = currentScroll;
-    });
-
     // Animation des cartes d'expertise
     const cards = document.querySelectorAll('.card');
     
@@ -113,6 +100,23 @@ document.addEventListener('DOMContentLoaded', function() {
         heroP.style.transition = 'opacity 1s ease-out';
         heroP.style.opacity = '1';
     }, 1000);
+
+    // Gestion des boutons d'expertise
+    const buttons = document.querySelectorAll('.expertise-toggle');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const expertiseSection = this.nextElementSibling;
+            
+            if (expertiseSection.style.display === 'none' || expertiseSection.style.display === '') {
+                expertiseSection.style.display = 'block';
+                this.innerHTML = 'Masquer l\'expertise <i class="fas fa-chevron-up"></i>';
+            } else {
+                expertiseSection.style.display = 'none';
+                this.innerHTML = 'Voir l\'expertise <i class="fas fa-chevron-down"></i>';
+            }
+        });
+    });
 });
 
 // Validation du formulaire de contact

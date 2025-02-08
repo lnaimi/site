@@ -6,6 +6,7 @@
     <title>ABLAM CTD - Notre Équipe</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
@@ -17,7 +18,7 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="equipe.html" class="active">Notre Équipe</a></li>
-                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="documentation.html">À Propos de Nous</a></li>
                 <li><a href="partenaires.html">Partenaires</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -39,13 +40,13 @@
             </div>
             <h3>Abdellah LAMZOUD</h3>
             <p class="position">Gérant de ABLAM CTD, Consultant Juridique en Droit des Affaires</p>
-            <div class="expertise">
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
-                    <li><i class="fas fa-balance-scale"></i> Accompagnement juridique, fiscal et stratégique</li>
-                    <li><i class="fas fa-chart-line"></i> Optimisation de la gestion juridique et fiscale des entreprises</li>
-                    <li><i class="fas fa-building"></i> Création d'entreprises, résolution de litiges</li>
-                    <li><i class="fas fa-check-circle"></i> Conformité aux réglementations en vigueur</li>
+                    <li>Accompagnement juridique, fiscal et stratégique</li>
+                    <li>Optimisation de la gestion juridique et fiscale des entreprises</li>
+                    <li>Création d'entreprises, résolution de litiges</li>
+                    <li>Conformité aux réglementations en vigueur</li>
                 </ul>
             </div>
         </div>
@@ -56,13 +57,16 @@
             </div>
             <h3>Najiba LEBDAOUI</h3>
             <p class="position">Consultante Sénior, Coach Internationale en Soft Skills</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
-                    <li><i class="fas fa-brain"></i> Développement des Soft Skills</li>
-                    <li><i class="fas fa-users"></i> Coaching d'Équipes et Team Building</li>
-                    <li><i class="fas fa-chalkboard-teacher"></i> Formation de Formateurs</li>
-                    <li><i class="fas fa-heart"></i> Bien-être au travail et gestion du stress</li>
+                    <li>Développement des Soft Skills</li>
+                    <li>Coaching d'Équipes et Team Building</li>
+                    <li>Formation de Formateurs</li>
+                    <li>Communication Interpersonnelle</li>
                 </ul>
             </div>
         </div>
@@ -73,13 +77,16 @@
             </div>
             <h3>Hasnaa CHEHABI</h3>
             <p class="position">Développement Durable, Genre, et Management Public</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
-                    <li><i class="fas fa-project-diagram"></i> Management des projets : Montage, Pilotage, Suivi et Évaluation</li>
-                    <li><i class="fas fa-chart-pie"></i> Évaluation des politiques publiques</li>
-                    <li><i class="fas fa-leaf"></i> Stratégies pour le développement durable et création de métiers verts</li>
-                    <li><i class="fas fa-users-cog"></i> Formation et Animation d'ateliers interactifs</li>
+                    <li>Management des projets : Montage, Pilotage, Suivi et Évaluation</li>
+                    <li>Évaluation des politiques publiques</li>
+                    <li>Stratégies pour le développement durable et création de métiers verts</li>
+                    <li>Formation et Animation d'ateliers interactifs</li>
                 </ul>
             </div>
         </div>
@@ -90,12 +97,15 @@
             </div>
             <h3>Mohamed BELADDA</h3>
             <p class="position">Expertise en Gestion des Ressources Humaines et Développement Territorial</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
-                    <li><i class="fas fa-user-tie"></i> Formation en Management des Équipes et Gestion des Compétences</li>
-                    <li><i class="fas fa-city"></i> Développement territorial et gestion des ressources humaines des communes</li>
-                    <li><i class="fas fa-graduation-cap"></i> Formation pour présidents et élus des communes territoriales</li>
+                    <li>Formation en Management des Équipes et Gestion des Compétences</li>
+                    <li>Développement territorial et gestion des ressources humaines des communes</li>
+                    <li>Formation pour présidents et élus des communes territoriales</li>
                 </ul>
             </div>
         </div>
@@ -106,12 +116,15 @@
             </div>
             <h3>Fatima SBAÏ</h3>
             <p class="position">Leadership, Environnement Durable</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
-                    <li><i class="fas fa-brain"></i> Développement des compétences : Soft Skills, Leadership</li>
-                    <li><i class="fas fa-clipboard-check"></i> Études techniques : Impact environnemental, Risques</li>
-                    <li><i class="fas fa-leaf"></i> Développement durable et gestion des risques industriels</li>
+                    <li>Développement des compétences : Soft Skills, Leadership</li>
+                    <li>Études techniques : Impact environnemental, Risques</li>
+                    <li>Gestion de projets environnementaux</li>
                 </ul>
             </div>
         </div>
@@ -122,7 +135,10 @@
             </div>
             <h3>Hassan NACIRI</h3>
             <p class="position">Formation, Consultant, et Manager de Projets</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-briefcase"></i> Animation sur la gestion des entreprises</li>
@@ -138,7 +154,10 @@
             </div>
             <h3>Saida TAHTOUH</h3>
             <p class="position">Formatrice, Juriste d'Affaires</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-comments"></i> Optimisation de la communication et gestion des procédures</li>
@@ -154,7 +173,10 @@
             </div>
             <h3>Amine TABARANI</h3>
             <p class="position">Expertise en Sécurité et Maintenance Industrielle</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-shield-alt"></i> Prévention des risques et conformité des équipements</li>
@@ -170,7 +192,10 @@
             </div>
             <h3>Boukil LAMZOUD</h3>
             <p class="position">Ingénieur en Génie Civil</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-hard-hat"></i> Suivi des travaux et contrôle de la qualité</li>
@@ -186,7 +211,10 @@
             </div>
             <h3>Nour-Eddine ABDELBAKI</h3>
             <p class="position">Expertise en Sciences Économiques et Gestion</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-project-diagram"></i> Gestion de projets, formations innovantes</li>
@@ -202,7 +230,10 @@
             </div>
             <h3>Said BRIBICH</h3>
             <p class="position">Expertise en Économie Appliquée et Gestion d'Entreprise</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-chart-bar"></i> Formation en économie et gestion d'entreprise</li>
@@ -218,7 +249,10 @@
             </div>
             <h3>Anoiri ISMAIL</h3>
             <p class="position">Expertise en Systèmes Embarqués et Intelligence Artificielle</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-microchip"></i> Conception et analyse des systèmes complexes en IA</li>
@@ -234,7 +268,10 @@
             </div>
             <h3>Akrim AIMAD</h3>
             <p class="position">Doctorant en Chimie et Environnement</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-flask"></i> Gestion de projets et maintenance biomédicale</li>
@@ -250,7 +287,10 @@
             </div>
             <h3>Hamdaoui EL MEHDI</h3>
             <p class="position">Formateur et Consultant</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-tasks"></i> Formation en gestion de projets</li>
@@ -266,7 +306,10 @@
             </div>
             <h3>El Hakym YOUNES</h3>
             <p class="position">Professeur Universitaire et Expert en Développement Humain et Droit Privé</p>
-            <div class="expertise">
+            <button onclick="toggleExpertise(this)" class="expertise-toggle">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="expertise-content" style="display: none;">
                 <h4>Expertise :</h4>
                 <ul>
                     <li><i class="fas fa-balance-scale"></i> Droit privé et gestion des projets sociaux</li>
@@ -313,12 +356,63 @@
         </div>
     </section>
 
-    <footer id="contact">
-        <p>Contactez-nous pour plus d'informations.</p>
-        <p>Email : <a href="mailto:ablamctd2024@gmail.com">ablamctd2024@gmail.com</a></p>
-        <p>Téléphone : 06 61782454 - 06 76435839</p>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4><i class="fas fa-building"></i> ABLAM CTD</h4>
+                <p>Votre partenaire en formations qualifiantes et certifiantes</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4><i class="fas fa-map-marker-alt"></i> Adresse</h4>
+                <p>209 Rue Mustapha El Maani</p>
+                <p>étage 4 - N° 5 Anfa</p>
+                <p>Casablanca, Maroc</p>
+            </div>
+
+            <div class="footer-section">
+                <h4><i class="fas fa-phone"></i> Contact</h4>
+                <p><i class="fas fa-mobile-alt"></i> <a href="tel:0661782454">06 61782454</a></p>
+                <p><i class="fas fa-mobile-alt"></i> <a href="tel:0676435839">06 76435839</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ablamctd2024@gmail.com">ablamctd2024@gmail.com</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h4><i class="fas fa-clock"></i> Horaires</h4>
+                <p><i class="fas fa-calendar-day"></i> Lundi - Vendredi: 9h - 18h</p>
+                <p><i class="fas fa-calendar-day"></i> Samedi: 9h - 13h</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ABLAM CTD. Tous droits réservés.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.team-member').click(function() {
+            const expertiseContent = $(this).find('.expertise-content');
+            
+            // Fermer toutes les autres sections d'expertise et réinitialiser leurs flèches
+            $('.team-member').not(this).removeClass('active');
+            $('.expertise-content').not(expertiseContent).slideUp();
+            
+            // Toggle l'expertise actuelle et la flèche
+            expertiseContent.slideToggle();
+            $(this).toggleClass('active');
+            
+            // Empêcher la propagation du clic pour les liens et autres éléments cliquables
+            $('.team-member a, .team-member button').click(function(e) {
+                e.stopPropagation();
+            });
+        });
+    });
+    </script>
 </body>
 </html> 
