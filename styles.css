@@ -1424,10 +1424,34 @@ footer a {
 @media (max-width: 768px) {
     .contact-grid {
         grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1rem;
     }
-    
-    .info-item {
-        padding: 0.8rem;
+
+    .contact-info, 
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .info-card {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .contact-section .container {
+        padding: 0 1rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
