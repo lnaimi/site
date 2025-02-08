@@ -758,6 +758,9 @@ footer a {
 .team-values {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .team-values h2 {
@@ -765,11 +768,12 @@ footer a {
     color: var(--primary-color);
     margin-bottom: 2rem;
     font-size: 1.8rem;
+    padding: 0 1rem;
 }
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -805,43 +809,31 @@ footer a {
 
 /* Ajustements pour mobile */
 @media (max-width: 768px) {
+    .team-values {
+        padding: 1rem 0;
+    }
+
     .values-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 1rem;
-        padding: 0 0.5rem;
+        padding: 0 1rem;
+        width: 100%;
     }
 
     .value-card {
-        padding: 1rem;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
-    .value-card i {
+    .team-values h2 {
         font-size: 1.5rem;
-    }
-
-    .value-card h3 {
-        font-size: 1rem;
-    }
-
-    .value-card p {
-        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
     }
 
     /* Assurer que le menu hamburger reste visible */
     .hamburger {
         z-index: 1001;
         position: relative;
-    }
-
-    /* Ajuster la largeur maximale du contenu */
-    .team-values {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    .team-values h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
     }
 }
 
@@ -1023,17 +1015,19 @@ footer a {
     padding: 2rem 1rem;
     overflow-x: hidden;
     width: 100%;
+    max-width: 100vw;
 }
 
 .values-section .section-header {
     text-align: center;
     margin-bottom: 2rem;
+    padding: 0 1rem;
 }
 
 .values-section .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
@@ -1061,17 +1055,19 @@ footer a {
 /* Ajustements pour mobile */
 @media (max-width: 768px) {
     .values-section {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0;
     }
 
     .values-section .values-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-        padding: 0 0.5rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 1rem;
+        width: 100%;
     }
 
     .value-item {
-        padding: 1rem;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .value-item i {
