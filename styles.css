@@ -653,12 +653,33 @@ footer a {
     margin: 0 auto 1rem;
     border-radius: 50%;
     overflow: hidden;
+    background-color: var(--background-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.member-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* Style pour l'icône dans le cercle */
+.member-image i {
+    font-size: 80px; /* Taille plus grande pour l'icône */
+    transition: transform 0.3s ease;
+}
+
+/* Animation au survol */
+.member-image:hover i {
+    transform: scale(1.1);
+}
+
+/* Ajustement pour mobile */
+@media (max-width: 768px) {
+    .member-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .member-image i {
+        font-size: 60px;
+    }
 }
 
 .team-member h3 {
