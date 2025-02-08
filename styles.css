@@ -2055,3 +2055,33 @@ footer a {
         max-width: 100vw;
     }
 }
+
+.quote {
+    font-style: italic;
+    font-size: 1.2em;
+    color: var(--primary-color); /* Utilisation de la couleur bleue primaire */
+    padding: 20px;
+    background-color: #f9f9f9; /* Ajout d'un fond */
+    margin: 20px 0;
+    position: relative;
+    border-radius: 10px; /* Ajout de coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajout d'une ombre */
+}
+
+.quote::before {
+    content: "“";
+    font-size: 3em; /* Augmentation de la taille des guillemets */
+    color: #ccc;
+    position: absolute;
+    top: -20px; /* Ajustement de la position */
+    left: 10px; /* Ajustement de la position */
+}
+
+.quote::after {
+    content: "”";
+    font-size: 3em; /* Augmentation de la taille des guillemets */
+    color: #ccc;
+    position: absolute;
+    bottom: -20px; /* Ajustement de la position */
+    right: 10px; /* Ajustement de la position */
+}
