@@ -1,0 +1,88 @@
+/* Test CSS pour GitHub Pages - Styles de débogage */
+
+/* Styles de test pour vérifier le chargement */
+.test-css-loaded {
+    background-color: #ff0000 !important;
+    color: #ffffff !important;
+    padding: 10px !important;
+    border: 2px solid #000000 !important;
+}
+
+/* Styles de fallback pour les nouvelles sections */
+.activities-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    min-height: 200px;
+}
+
+.presentation-video-section {
+    padding: 4rem 2rem;
+    background-color: #ffffff;
+    min-height: 200px;
+}
+
+/* Fallback pour les grilles */
+.gallery-grid-large {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.gallery-grid-large .gallery-item {
+    width: calc(33.333% - 0.8rem);
+    margin-bottom: 1.2rem;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid-large .gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Fallback pour la vidéo de présentation */
+.video-presentation-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background-color: #000;
+}
+
+.presentation-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.video-description {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-description h3 {
+    color: #153c74;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.video-description p {
+    color: #2c3e50;
+    line-height: 1.6;
+    font-size: 1rem;
+}

@@ -2407,10 +2407,29 @@ footer a {
 
 /* Grille pour 6 images (3x2) */
 .gallery-grid-large {
+    /* Fallback pour les navigateurs qui ne supportent pas CSS Grid */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+    /* CSS Grid pour les navigateurs modernes */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem;
-    margin-top: 1rem;
+}
+
+/* Fallback pour les navigateurs sans support Grid */
+@supports not (display: grid) {
+    .gallery-grid-large {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .gallery-grid-large .gallery-item {
+        width: calc(33.333% - 0.8rem);
+        margin-bottom: 1.2rem;
+    }
 }
 
 .gallery-item {
@@ -2444,9 +2463,15 @@ footer a {
 
 /* Optimisation des images pour réduire la charge */
 .gallery-item img {
-    image-rendering: -webkit-optimize-contrast;
+    /* Fallback pour les navigateurs qui ne supportent pas image-rendering */
+    image-rendering: auto;
+    /* Optimisation pour WebKit */
+    -webkit-image-rendering: optimize-contrast;
+    /* Optimisation pour Firefox */
     image-rendering: crisp-edges;
+    /* Filtres avec fallback */
     filter: contrast(1.1) brightness(1.05);
+    -webkit-filter: contrast(1.1) brightness(1.05);
 }
 
 /* Styles pour la vidéo YouTube */
@@ -2516,10 +2541,24 @@ footer a {
 .video-presentation-container {
     max-width: 1000px;
     margin: 0 auto;
+    /* Fallback pour les navigateurs qui ne supportent pas CSS Grid */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* CSS Grid pour les navigateurs modernes */
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 3rem;
     align-items: start;
+}
+
+/* Fallback pour les navigateurs sans support Grid */
+@supports not (display: grid) {
+    .video-presentation-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
 
 .video-wrapper {
