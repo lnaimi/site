@@ -24,6 +24,273 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles-fallback.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles intégrés pour GitHub Pages - Page des Activités */
+        .activities-section {
+            padding: 4rem 2rem;
+            background-color: #f9f9f9;
+        }
+        
+        .activities-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .activity-header {
+            background: linear-gradient(135deg, #153c74, #385a64);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .activity-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .activity-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .activity-title h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .activity-location {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+        
+        .activity-content {
+            padding: 2.5rem;
+        }
+        
+        .activity-description {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #2c3e50;
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #ff735c;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .detail-icon i {
+            font-size: 1.2rem;
+            color: white;
+        }
+        
+        .detail-content h5 {
+            color: #153c74;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .detail-content p {
+            color: #2c3e50;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .gallery-grid-large {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #f5f5f5;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            background-color: #f5f5f5;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            margin-top: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-fallback {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #ff735c;
+            text-align: center;
+        }
+        
+        .video-fallback p {
+            color: #2c3e50;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        .video-fallback i {
+            color: #ff735c;
+            margin-right: 0.5rem;
+        }
+        
+        .video-fallback a {
+            color: #153c74;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .video-fallback a:hover {
+            color: #ff735c;
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid-large {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .activities-section {
+                padding: 2rem 1rem;
+            }
+            .activity-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            .activity-icon {
+                width: 60px;
+                height: 60px;
+            }
+            .activity-icon i {
+                font-size: 2rem;
+            }
+            .activity-title h3 {
+                font-size: 1.3rem;
+            }
+            .activity-content {
+                padding: 1.5rem;
+            }
+            .gallery-grid-large {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .gallery-item img {
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid-large {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+            .gallery-item img {
+                height: 160px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>

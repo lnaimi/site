@@ -23,6 +23,88 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles-fallback.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles intégrés pour GitHub Pages - Vidéo de présentation */
+        .presentation-video-section {
+            padding: 4rem 2rem;
+            background-color: white;
+        }
+        
+        .video-presentation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background-color: #000;
+        }
+        
+        .presentation-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 15px;
+        }
+        
+        .video-description {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-description h3 {
+            color: #153c74;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .video-description h3 i {
+            color: #ff735c;
+            font-size: 1.1rem;
+        }
+        
+        .video-description p {
+            color: #2c3e50;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        /* Responsive pour la vidéo de présentation */
+        @media (max-width: 1024px) {
+            .video-presentation-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .presentation-video-section {
+                padding: 2rem 1rem;
+            }
+            .video-presentation-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .video-description {
+                padding: 1.5rem;
+            }
+            .video-description h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
