@@ -174,6 +174,7 @@
         
         .gallery-item:hover {
             transform: scale(1.02);
+            cursor: pointer;
         }
         
         .gallery-item img {
@@ -239,6 +240,93 @@
         .video-fallback a:hover {
             color: #ff735c;
             text-decoration: underline;
+        }
+        
+        /* Styles pour le modal d'image */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            transition: color 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            color: #ff735c;
+        }
+        
+        .modal-caption {
+            text-align: center;
+            color: white;
+            padding: 15px;
+            font-size: 1.1rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 0 0 10px 10px;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: translateY(-50%) scale(0.8); opacity: 0; }
+            to { transform: translateY(-50%) scale(1); opacity: 1; }
+        }
+        
+        /* Responsive pour le modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                margin: 20px auto;
+            }
+            
+            .close-btn {
+                top: -30px;
+                font-size: 30px;
+            }
+            
+            .modal-caption {
+                font-size: 1rem;
+                padding: 10px;
+            }
         }
         
         /* Responsive */
@@ -423,10 +511,10 @@
                     <div class="activity-gallery">
                         <h4><i class="fas fa-camera"></i> Images du projet d'archivage :</h4>
                         <div class="gallery-grid">
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/archivage1.jpg', 'Projet d\'archivage - Commune de Lamnizla')">
                                 <img src="images/activities/archivage1.jpg" alt="Projet d'archivage - Commune de Lamnizla" loading="lazy">
                             </div>
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/archivage2.jpg', 'Système d\'archivage numérique - Commune de Lamnizla')">
                                 <img src="images/activities/archivage2.jpg" alt="Système d'archivage numérique - Commune de Lamnizla" loading="lazy">
                             </div>
                         </div>
@@ -504,22 +592,22 @@
                     <div class="activity-gallery">
                         <h4><i class="fas fa-camera"></i> Images de la session de formation :</h4>
                         <div class="gallery-grid-large">
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/formation1.jpg', 'Session de formation - Errachidia')">
                                 <img src="images/activities/formation1.jpg" alt="Session de formation - Errachidia" loading="lazy" decoding="async">
                             </div>
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/formation2.jpg', 'Participants à la formation - Errachidia')">
                                 <img src="images/activities/formation2.jpg" alt="Participants à la formation - Errachidia" loading="lazy" decoding="async">
                             </div>
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/formation3.jpg', 'Ateliers pratiques - Formation Errachidia')">
                                 <img src="images/activities/formation3.jpg" alt="Ateliers pratiques - Formation Errachidia" loading="lazy" decoding="async">
                             </div>
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/formation4.jpg', 'Intervenants et participants - Errachidia')">
                                 <img src="images/activities/formation4.jpg" alt="Intervenants et participants - Errachidia" loading="lazy" decoding="async">
                             </div>
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/formation5.jpg', 'Séance de formation interactive - Errachidia')">
                                 <img src="images/activities/formation5.jpg" alt="Séance de formation interactive - Errachidia" loading="lazy" decoding="async">
                             </div>
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/formation6.jpg', 'Clôture de la formation - Errachidia')">
                                 <img src="images/activities/formation6.jpg" alt="Clôture de la formation - Errachidia" loading="lazy" decoding="async">
                             </div>
                         </div>
@@ -637,10 +725,10 @@
                     <div class="activity-gallery">
                         <h4><i class="fas fa-camera"></i> Images de la formation :</h4>
                         <div class="gallery-grid">
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/electrique1.jpg', 'Formation habilitation électrique - Tinghir')">
                                 <img src="images/activities/electrique1.jpg" alt="Formation habilitation électrique - Tinghir" loading="lazy">
                             </div>
-                            <div class="gallery-item">
+                            <div class="gallery-item" onclick="openImageModal('images/activities/electrique2.jpg', 'Ateliers pratiques - Formation électrique')">
                                 <img src="images/activities/electrique2.jpg" alt="Ateliers pratiques - Formation électrique" loading="lazy">
                             </div>
                         </div>
@@ -695,6 +783,46 @@
     </div>
 </footer>
 
+    <!-- Modal pour l'affichage des images en plein écran -->
+    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // Fonction pour ouvrir le modal d'image
+        function openImageModal(imageSrc, caption) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImg.src = imageSrc;
+            modalCaption.textContent = caption;
+            
+            // Empêcher le scroll du body
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Fonction pour fermer le modal d'image
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            
+            // Restaurer le scroll du body
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Fermer le modal avec la touche Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
 </body>
 </html>
